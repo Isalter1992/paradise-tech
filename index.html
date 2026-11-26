@@ -256,6 +256,27 @@ nav a{white-space:nowrap}
 .rvf .rvck{flex-direction:row;align-items:flex-start;gap:10px;font-weight:500}.rvck input{margin-top:3px;accent-color:#f7b500}
 .rvfine{margin:0;color:var(--mut);font-size:13px;text-align:center}
 @media(max-width:700px){.rvr2{grid-template-columns:1fr}}
+dialog.pol{width:min(760px,calc(100vw - 28px));max-height:calc(100vh - 40px);padding:0;border:1px solid rgba(247,181,0,.45);border-radius:18px;background:linear-gradient(180deg,#0d1636,#070a1c);color:#dfe6ff;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 40px rgba(247,181,0,.12);overflow:hidden}
+dialog.pol[open]{display:flex;flex-direction:column;animation:polin .22s ease-out}
+dialog.pol::backdrop{background:rgba(2,3,10,.78)}
+@keyframes polin{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.polh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line);flex:none}
+.polh h2{margin:0;font-size:28px}
+.polx{background:transparent;border:1px solid var(--line);color:#fff;width:40px;height:40px;border-radius:50%;font-size:26px;line-height:1;cursor:pointer}
+.polx:hover{border-color:var(--gold);color:var(--gold)}
+.polb{padding:8px 24px 28px;overflow-y:auto;line-height:1.6;font-size:15px}
+.polb h3{color:var(--gold);font-size:17px;margin:22px 0 6px}
+.polb p{margin:0 0 10px}.polb ul{margin:0 0 10px;padding-left:22px}.polb li{margin-bottom:6px}
+.polb a{color:#8fb8ff;text-decoration:underline}.pold{color:var(--mut);font-size:13px;margin-top:14px!important}
+@media(prefers-reduced-motion:reduce){dialog.pol[open]{animation:none}}
+.tbds{display:grid;gap:12px}.tbds .tbd{display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,rgba(13,22,54,.9),rgba(8,12,31,.9));border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.tbd svg{flex:none;width:30px;height:30px;fill:none;stroke:var(--gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(247,181,0,.35))}
+.tbd strong{display:block;font-size:14px;color:#fff;line-height:1.25}.tbd span{display:block;color:var(--mut);font-size:12.5px;line-height:1.3;margin-top:2px}
+.tbc{grid-template-columns:repeat(4,1fr);margin:0 0 24px}
+.tbf{grid-template-columns:repeat(5,1fr);margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+@media(max-width:1000px){.tbf{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.tbc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.tbc,.tbf{grid-template-columns:1fr 1fr;gap:10px}.tbds .tbd{padding:10px;gap:9px}.tbd svg{width:24px;height:24px}.tbd strong{font-size:13px}.tbd span{font-size:11.5px}}
 </style></head><body>
 <div class="bar" id="bar"><div class="trk"><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span><span>Black Friday Sale · Use code PARADISE15 for 15% off · Free shipping on orders over $125</span></div></div>
 <header><div class="wrap nav">
@@ -301,6 +322,7 @@ nav a{white-space:nowrap}
 <section id="shop"><div class="wrap">
 <div class="head"><div><h2 class="gold">Best sellers</h2><p>Top-rated gear our customers keep coming back for.</p></div>
 <div class="tabs" id="tabs"></div></div>
+<div class="tbds tbc" role="list" aria-label="Why you can shop with confidence"><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg><div><strong>Secure checkout</strong><span>256-bit SSL via Shopify</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg><div><strong>30-day returns</strong><span>Full refund on unused items</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><strong>1-year warranty</strong><span>Against defects</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg><div><strong>Tracked shipping</strong><span>Tracking sent to your email</span></div></div></div>
 <div class="grid" id="grid"></div>
 </div></section>
 
@@ -412,12 +434,80 @@ nav a{white-space:nowrap}
 <div class="fg">
 <div><a class="logo flg" href="#top" aria-label="Paradise Tech home"><span class="lg" role="img" aria-label="Paradise Tech"><i><b></b></i></span></a><p style="margin-top:12px">Sealed phones, computers, monitors, gaming, audio and smart gadgets at prices that make sense.</p>
 <div class="pay"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>PAYPAL</span><span>APPLE PAY</span><span>SHOP PAY</span></div></div>
-<div><h4>Shop</h4><ul><li><a href="#shop">Gaming</a></li><li><a href="#shop">Audio</a></li><li><a href="#shop">Computing</a></li><li><a href="#shop">Wearables</a></li></ul></div>
+<div><h4>Shop</h4><ul><li><a href="#shop" data-c="Gaming">Gaming</a></li><li><a href="#shop" data-c="Audio">Audio</a></li><li><a href="#shop" data-c="Phones">Phones</a></li><li><a href="#shop" data-c="Computing">Computing</a></li><li><a href="#shop" data-c="Wearables">Wearables</a></li><li><a href="#shop" data-c="Skins &amp; Cases">Skins &amp; Cases</a></li></ul></div>
 <div><h4>Support</h4><ul><li><a href="#faq">Shipping info</a></li><li><a href="#faq">Returns & refunds</a></li><li><a href="#faq">Warranty</a></li><li><a href="#track">Track my order</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="#top">About us</a></li><li><a href="#contact">Contact</a></li><li><a href="#top">Privacy policy</a></li><li><a href="#top">Terms of service</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="#top">About us</a></li><li><a href="#contact">Contact</a></li><li><a href="#privacy" data-pol="polPrivacy">Privacy policy</a></li><li><a href="#terms" data-pol="polTerms">Terms of service</a></li></ul></div>
 </div>
+<div class="tbds tbf" role="list" aria-label="Why you can shop with confidence"><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg><div><strong>Secure checkout</strong><span>256-bit SSL via Shopify</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg><div><strong>30-day returns</strong><span>Full refund on unused items</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><strong>1-year warranty</strong><span>Against defects</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg><div><strong>Tracked shipping</strong><span>Tracking sent to your email</span></div></div><div class="tbd"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 10h8"/></svg><div><strong>Real human support</strong><span>Replies within hours</span></div></div></div>
 <div class="copy"><span>© 2026 Paradise Tech. All rights reserved.</span><span>🔒 Secure checkout · 30-day returns · 1-year warranty</span></div>
 </div></footer>
+
+
+<dialog class="pol" id="polPrivacy" aria-labelledby="polPrivacyT"><div class="polh"><h2 id="polPrivacyT" class="gold">Privacy Policy</h2><button type="button" class="polx" data-polx aria-label="Close">&times;</button></div>
+<div class="polb">
+<p class="pold">Effective date: November 25, 2026</p>
+<p>This Privacy Policy explains how Paradise Tech (&ldquo;Paradise Tech,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;) collects, uses and shares information when you visit paradisetechs.store or buy from us. By using our site you agree to the practices described here.</p>
+<h3>1. Information we collect</h3>
+<p><b>Information you give us:</b> your name, email address, shipping and billing address, phone number (if provided), order details, and anything you send through our contact, order-tracking or review forms.</p>
+<p><b>Payment information:</b> payments are handled by Shopify and its payment partners. We never see or store your full card number.</p>
+<p><b>Information collected automatically:</b> device and browser type, pages viewed, approximate location from your IP address, and cookies or similar technologies that keep your cart working and help secure checkout.</p>
+<h3>2. How we use your information</h3>
+<ul><li>To process and ship your orders, send order confirmations and tracking updates, and handle returns, refunds and warranty claims.</li><li>To answer your questions and provide customer support.</li><li>To send marketing emails about offers and new products if you sign up (you can unsubscribe at any time).</li><li>To publish reviews you choose to submit, with your first name and last initial and only with your permission.</li><li>To prevent fraud, keep our site secure and improve our products and website.</li><li>To comply with legal obligations.</li></ul>
+<h3>3. How we share information</h3>
+<p>We do not sell your personal information. We share it only with service providers who help us run the store, such as Shopify (checkout, payments and order management), payment processors, shipping carriers and email providers, and only as needed to do their work. We may also disclose information if required by law or to protect our rights, customers or the public.</p>
+<h3>4. Cookies</h3>
+<p>Cookies are small files stored on your device. We and Shopify use them to remember items in your cart, complete checkout securely and understand how the site is used. You can block or delete cookies in your browser settings, but parts of the site, such as checkout, may not work without them.</p>
+<h3>5. Marketing emails</h3>
+<p>If you join our email list we may send you promotions and updates. Every email includes an unsubscribe link, or you can contact us and we will remove you. We will still send order-related messages.</p>
+<h3>6. Data retention and security</h3>
+<p>We keep personal information only as long as needed for the purposes above and to meet legal, tax and accounting requirements. We use reasonable safeguards, including encrypted (SSL) checkout, but no method of transmission or storage is completely secure.</p>
+<h3>7. Your choices and rights</h3>
+<p>You may ask us to access, correct or delete the personal information we hold about you, or to stop using it for marketing. If you live in California or another region with privacy laws, you may have additional rights, such as knowing what categories of information we collect and opting out of any sale or sharing (we do not sell personal information). To make a request, use the Contact form on our site. We may need to verify your identity first.</p>
+<h3>8. Children</h3>
+<p>Our store is intended for adults. We do not knowingly collect personal information from children under 13. If you believe a child has given us information, contact us and we will delete it.</p>
+<h3>9. Links to other sites</h3>
+<p>Our site may link to third-party websites. We are not responsible for their privacy practices, so please read their policies.</p>
+<h3>10. Changes to this policy</h3>
+<p>We may update this policy from time to time. The effective date above shows when it was last changed. Continued use of the site after an update means you accept the new version.</p>
+<h3>11. Contact us</h3>
+<p>Questions about this policy? Use the Contact section of our site (<a href="#contact" data-polx>Contact us</a>) and we will reply by email.</p>
+</div></dialog>
+
+<dialog class="pol" id="polTerms" aria-labelledby="polTermsT"><div class="polh"><h2 id="polTermsT" class="gold">Terms of Service</h2><button type="button" class="polx" data-polx aria-label="Close">&times;</button></div>
+<div class="polb">
+<p class="pold">Effective date: November 25, 2026</p>
+<p>These Terms of Service govern your use of paradisetechs.store and your purchases from Paradise Tech (&ldquo;we,&rdquo; &ldquo;us&rdquo;). By using the site or placing an order you agree to these terms. If you do not agree, please do not use the site.</p>
+<h3>1. Eligibility</h3>
+<p>You must be at least 18 years old, or have the permission of a parent or guardian, to place an order.</p>
+<h3>2. Products and descriptions</h3>
+<p>We try to describe and display our products as accurately as possible, including specifications, colors and condition. Images are for illustration and may differ slightly from the item you receive, for example in packaging, accessories or color shade. Brand names and logos belong to their owners. Paradise Tech is an independent retailer and is not affiliated with or endorsed by those brands.</p>
+<h3>3. Pricing and availability</h3>
+<p>All prices are in U.S. dollars. Prices, discounts and availability can change at any time without notice. If a product is listed at the wrong price because of an error, we may cancel the order and refund you in full.</p>
+<h3>4. Orders and payment</h3>
+<p>Placing an order is an offer to buy. We may accept or decline any order, for example because of stock, pricing errors, suspected fraud or an address we cannot ship to. Payment is taken at checkout through Shopify and its payment partners. Taxes and shipping, where they apply, are shown before you pay.</p>
+<h3>5. Promotions and discount codes</h3>
+<p>Promotional offers and discount codes, including any Black Friday offer, are subject to the terms shown with them. Unless stated otherwise, one code may be used per order, codes cannot be combined, have no cash value, and may be changed or ended at any time.</p>
+<h3>6. Shipping and delivery</h3>
+<p>Orders usually ship within 24 hours on business days. Standard delivery takes about 7&ndash;10 business days after your order ships. Faster options, where offered, are shown at checkout. Delivery dates are estimates and not guarantees, and delays can occur because of carriers, weather or other events outside our control. You are responsible for entering a correct shipping address. We cannot be responsible for orders delivered to an address entered incorrectly.</p>
+<h3>7. Returns and refunds</h3>
+<p>You may return unused items in their original packaging within 30 days of delivery for a full refund. To start a return, contact us through the Contact section with your order number. Items that are used, damaged by the customer or missing parts may not qualify for a full refund. Refunds are issued to your original payment method after we receive and inspect the item. Original shipping costs are not refunded unless the return is due to our error.</p>
+<h3>8. Warranty</h3>
+<p>Every product comes with a 1-year warranty against defects in materials and workmanship, in addition to any coverage from the manufacturer. The warranty does not cover damage from misuse, accidents, unauthorized repairs or normal wear. To make a claim, contact us with your order number and a description of the problem.</p>
+<h3>9. Reviews and submissions</h3>
+<p>If you submit a review or other content, you confirm it is honest, based on your own experience and does not break the law or anyone&rsquo;s rights. You give us permission to publish and display it on our site with your first name and last initial. We may edit, decline or remove submissions at our discretion.</p>
+<h3>10. Acceptable use</h3>
+<p>You agree not to misuse the site, including attempting to hack or disrupt it, using bots or scrapers, submitting false orders or reviews, or using the site for any unlawful purpose.</p>
+<h3>11. Intellectual property</h3>
+<p>The Paradise Tech name, logo and the content and design of this site belong to us or our licensors. You may not copy, reproduce or use them for commercial purposes without our written permission.</p>
+<h3>12. Disclaimers and limitation of liability</h3>
+<p>The site is provided &ldquo;as is&rdquo; and &ldquo;as available.&rdquo; To the fullest extent permitted by law, we do not make warranties beyond those stated in these terms, and we are not liable for indirect, incidental or consequential damages. Our total liability for any claim relating to an order will not exceed the amount you paid for that order. Nothing in these terms limits any rights you have under applicable consumer protection laws.</p>
+<h3>13. Governing law</h3>
+<p>These terms are governed by the laws of the United States and the state in which Paradise Tech is established, without regard to conflict-of-law rules.</p>
+<h3>14. Changes to these terms</h3>
+<p>We may update these terms from time to time. The effective date above shows the latest version. Continued use of the site after changes means you accept them.</p>
+<h3>15. Contact us</h3>
+<p>Questions about these terms? Use the Contact section of our site (<a href="#contact" data-polx>Contact us</a>) and we will reply by email.</p>
+</div></dialog>
 
 <div id="note" aria-live="polite"><img id="ni" alt=""><div><strong id="nt"></strong><small id="nm"></small></div></div>
 <div id="toast" role="status"></div>
@@ -604,4 +694,12 @@ f.addEventListener('submit',function(){var r=f.querySelector('input[name=rvr]:ch
 document.getElementById('rvbody').value='REVIEW SUBMISSION\nRating: '+(r?r.value:'')+'/5\nProduct: '+document.getElementById('rvp').value.trim()+(od?'\nOrder number: '+od:'')+'\nPermission to publish: yes\n\nReview:\n'+document.getElementById('rvt').value;
 if(typeof toast==='function')toast('Thank you! Your review was sent for approval.');setTimeout(function(){f.reset();f.classList.remove('on');o.setAttribute('aria-expanded','false');o.textContent='Write a review'},800)})})();
 </script>
+<script>
+(function(){var ds=[].slice.call(document.querySelectorAll('dialog.pol')),last=null;
+function open(id){var d=document.getElementById(id);if(!d||d.open)return;ds.forEach(function(x){if(x.open)x.close()});if(d.showModal)d.showModal();else d.setAttribute('open','');var b=d.querySelector('.polb');if(b)b.scrollTop=0}
+document.querySelectorAll('[data-pol]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();last=a;open(a.getAttribute('data-pol'))})});
+ds.forEach(function(d){d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-polx]'))d.close()});d.addEventListener('close',function(){if(last)try{last.focus({preventScroll:true})}catch(_){}})});
+var h=location.hash;if(h==='#privacy')open('polPrivacy');else if(h==='#terms')open('polTerms')})();
+</script>
+<script>document.querySelectorAll("footer a[data-c]").forEach(function(a){a.addEventListener("click",function(){if(typeof pick==="function")pick(a.dataset.c)})});</script>
 </body></html>
